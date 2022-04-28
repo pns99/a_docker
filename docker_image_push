@@ -1,0 +1,16 @@
+pipeline {
+    agent {label 'santunode01'}
+    stages {
+        stage (" build docker image") {
+
+            steps {
+                sh " docker build -t santu459/postgress:2.0 ."
+            }
+        }
+    }
+    stage ("Docker push") {
+        steps {
+            sh "docker push  santu459/postgress:2.0"
+        }
+    }
+}
