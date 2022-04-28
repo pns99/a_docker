@@ -1,7 +1,4 @@
-FROM node:carbon
-
-
-
-# Create app directory
-WORKDIR /opt/apps/node-app/
-
+FROM library/postgres
+ENV POSTGRES_USER docker
+ENV POSTGRES_PASSWORD docker
+ENV POSTGRES_DB docker
